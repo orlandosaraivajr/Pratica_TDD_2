@@ -1,0 +1,41 @@
+{% load static %}
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Orlando Saraiva do Nascimento Júnior">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static '/css/style.css' %}">
+        <title>Cadastro</title>
+    </head>
+    <body>
+        <br>
+            <h1> Cadastro de Pessoas </h1>
+            <h2> Agenda Pessoal </h2>
+        <br>
+
+        {% if contatos %}
+            <br>
+            {% for contato in contatos %}
+                <form action={% url 'core:delete' %} novalidate method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}     
+                    <h4> {{ contato }} 
+                        <input type="hidden" name="id" value={{ contato.pk }}>        
+                        <input  class="btn btn-danger" type="submit" value="Remover"/>
+                    </h4>   
+                    
+                </form>
+            {% endfor %}
+        {% else %}
+            <h2> Nenhum contato cadastrado </h2>      
+        {% endif %} 
+
+        <center>
+            <form action={% url 'core:index' %} novalidate method="GET">
+                <input class="btn btn-secondary" type="submit" value="Voltar"/>              
+            </form>
+        </center>
+    </body>
+
+</html>
