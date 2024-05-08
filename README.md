@@ -85,7 +85,9 @@ Crie um superusuário com as seguintes credenciais:
 - E-mail address <b>seu e-mail institucional</b>:
 - Password <b>fatec</b>:
 
-Acessar a Área do Django-Admin, registrar o modelo AgendaModel
+Acessar a Área do Django-Admin, registrar o modelo AgendaModel. Como visto na imagem abaixo, o modelo não está registrado.
+
+<img src="img/django_admin.png">
 
 ## Novo campo
 O cliente deseja armazenar um novo campo:
