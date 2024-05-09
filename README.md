@@ -2,6 +2,11 @@
 
 Desafio técnico para os alunos da disciplina "Desenvolvimento Web 3"
 
+
+
+[O que eu devo fazer ?](https://youtu.be/ZwH9_WBOhgA)
+
+
 No ambiente Linux:
 
 ```console
