@@ -41,15 +41,15 @@ class AgendaModelTest(TestCase):
         self.agenda.save()
 
     def test_str(self):
-        self.assertEquals(str(self.agenda), 'José da Silva')
+        self.assertEqual(str(self.agenda), 'José da Silva')
 
     def test_created(self):
         self.assertTrue(AgendaModel.objects.exists())
 
     def test_data_saved(self):
         data = AgendaModel.objects.first()
-        self.assertEquals(data.nome, 'José da Silva')
-        self.assertEquals(data.telefone, '9999999999')
+        self.assertEqual(data.nome, 'José da Silva')
+        self.assertEqual(data.telefone, '9999999999')
 
 
 class AgendaFormTest(TestCase):
